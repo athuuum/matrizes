@@ -23,7 +23,6 @@ for i in range(l1):
     line = []
     for j in range(c1):
         number = int(input(f"Número ({i},{j}): "))
-        print(number)
         matrix1.set_value(number, i, j)
         
 print("\nMATRIZ 1")
