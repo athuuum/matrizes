@@ -1,4 +1,3 @@
-
 class Matrix():
 
     def __init__(self, lines, colunes):
@@ -35,4 +34,3 @@ class Matrix():
                     self.matrix[0][2] * (self.matrix[1][0] * self.matrix[2][1] - self.matrix[1][1] * self.matrix[2][0]))
         else:
             pass
-
