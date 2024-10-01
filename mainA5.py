@@ -1,8 +1,8 @@
-#   5. Faça um algoritmo em que o usuário define o tamanho da matriz e a 
-#   preenche por completo com dados. A partir dessa matriz o algoritmo deve 
-#   criar uma matriz do “tipo  igualdade”. A matriz igualdade é obtida quando 
-#   possui a mesma quantidade de linhas/colunas e os mesmos valores ou elementos. 
-#   Ou seja, uma réplica da matriz original.
+# 5. Faça um algoritmo em que o usuário define o tamanho da matriz e a 
+# preenche por completo com dados. A partir dessa matriz o algoritmo deve 
+# criar uma matriz do “tipo  igualdade”. A matriz igualdade é obtida quando 
+# possui a mesma quantidade de linhas/colunas e os mesmos valores ou elementos. 
+# Ou seja, uma réplica da matriz original.
 
 l = int(input("Quantidade de linhas: "))
 c = int(input("Quantidade de colunas: "))

@@ -10,3 +10,13 @@ def matrix(l, c):
         matrix[i] = line
 
     return matrix
+
+
+def transpose(matrix):
+    result = []
+    for i in range(len(matrix[0])):
+        line = []
+        for j in range(len(matrix)):
+            line.append(matrix[j][i]) 
+        result.append(line)
+    return result
