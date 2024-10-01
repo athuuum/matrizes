@@ -3,35 +3,24 @@
 # Para isso ela precisa ser quadrada e seu determinante tem que ser diferente 
 # de zero, caso contrário não haverá inversão.
 
-from Objects.matrix import matrix
+from Objects.matrix import Matrix
 
 l = int(input("Tamanho da matrix quadrada: "))
 
-matrix1 = matrix(l,l)
+matrix1 = Matrix(l,l)
 
-print("\nMATRIZ")
-for i in range(l):
-   print(matrix1[i])
-
-print("\nMATRIZ INVERSA")
-
-inverse_matrix = []
 for i in range(l):
     line = []
     for j in range(l):
-        result = 0
-        for k in range(l):
-               if (i == j):
-                  if(matrix1[i][k]!=0):
-                     result = f"1/{matrix1[i][k]}"
-                  print(result)
-               else:
-                  result += 0
-                  2
-           
-      
-        line.append(result)
-    inverse_matrix.append(line)
-
+        number = int(input(f"Número ({i},{j}): "))
+        matrix1.set_value(number, i, j)
+        
+print("\nMATRIZ")
 for i in range(l):
-   print(inverse_matrix[i])
+   print(matrix1.get()[i])
+   
+print("\nMATRIZ INVERSA")
+matrix1.get_inverted()
+determinant = matrix1.get_determinant()
+print(determinant)
+

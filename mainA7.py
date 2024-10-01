@@ -6,22 +6,26 @@
 # elementos de uma coluna passam a ser elementos de uma linha. Seja M a 
 # matriz original, a transposta é denotada por Mt.
 
-from Objects.matrix import *
+from Objects.matrix import Matrix
 
 l = int(input("Quantidade de linhas: "))
 c = int(input("Quantidade de colunas: "))
 
-matrix1 = matrix(l,c)
+matrix1 = Matrix(l,c)
+for i in range(l):
+    line = []
+    for j in range(c):
+        number = int(input(f"Número ({i},{j}): "))
+        matrix1.set_value(number, i, j)
 
 print("\nMATRIZ: ")
-for i in range(l):
-   print(matrix1[i])
+for i in matrix1.get():
+   print(i)
 
 print("\nMATRIZ TRANSPOSTA: ")
 
-matrix1_t = transpose(matrix1)
-
-for i in matrix1_t:
+transposed_matrix = matrix1.get_transposed()
+for i in transposed_matrix:
    print(i)
 
 """matrix2 = []
