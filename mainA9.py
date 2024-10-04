@@ -31,7 +31,7 @@ for i in matrix1.get():
    print(i)
 
 print("\nMATRIZ 1 [transposta]")
-for i in matrix1.get_transposed():
+for i in matrix1.get_transposed().get():
    print(i)
 
 print("\nMATRIZ 2")
@@ -40,5 +40,5 @@ for i in matrix2.get():
 
 
 print("\nMATRIZ [transposta]")
-for i in matrix2.get_transposed():
+for i in matrix2.get_transposed().get():
    print(i)

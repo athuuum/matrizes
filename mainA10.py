@@ -20,7 +20,9 @@ for i in range(l):
    print(matrix1.get()[i])
    
 print("\nMATRIZ INVERSA")
-matrix1.get_inverted()
-determinant = matrix1.get_determinant()
-print(determinant)
+inverted = matrix1.get_inverted()
+
+for i in inverted.get():
+    print(i)
+
 

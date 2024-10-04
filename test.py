@@ -5,10 +5,12 @@
 
 from Objects.matrix import Matrix
 
-l = 2
+l = 3
 matrix1 = Matrix(l,l)
 #matrix1.set([[3,1,0,1],[0,-1,3,4],[1,1,0,2],[0,1,1,-1]])
-matrix1.set([[2,0],[4,3]])
+#matrix1.set([[2,0],[4,3]])
+
+matrix1.set([[2,-2,2],[2,1,0],[3,-2,2]])
 
 # for i in range(l):
 #     line = []
@@ -21,8 +23,23 @@ for i in range(l):
    print(matrix1.get()[i])
    
 print("\nMATRIZ INVERSA")
-matrix1.get_inverted()
+inv = matrix1.get_inverted()
+
+for i in inv.get():
+   print(i)
+
+
+
+print("espace")
+
+
+for i in matrix1.get_cofactor_matrix().get_transposed().get():
+   print(i)
+
+
+
+'''matrix1.get_inverted()
 matrix_id = matrix1.get_id()
 matrix_inv = matrix1.get_inverted()
 for i in matrix_id.get():
-   print(i)
+   print(i)'''

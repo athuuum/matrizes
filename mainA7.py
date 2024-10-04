@@ -25,6 +25,6 @@ for i in matrix1.get():
 print("\nMATRIZ TRANSPOSTA: ")
 
 transposed_matrix = matrix1.get_transposed()
-for i in transposed_matrix:
+for i in transposed_matrix.get():
    print(i)
 
