@@ -20,7 +20,11 @@ matrix1 = Matrix(l1,c1)
 for i in range(l1):
     line = []
     for j in range(c1):
-        number = int(input(f"Número ({i},{j}): "))
+        number = float(input(f"Número ({i},{j}): "))
+        '''if "/" in number:
+            number = float(number.split('/')[0]) / float(number.split('/')[1])
+        else:
+            float(number)'''
         matrix1.set_value(number, i, j)
 
 l2 = c1
@@ -29,7 +33,11 @@ matrix2 = Matrix(l2,c2)
 for i in range(l2):
     line = []
     for j in range(c2):
-        number = int(input(f"Número ({i},{j}): "))
+        number = float(input(f"Número ({i},{j}): "))
+        '''if "/" in number:
+            number = float(float(number.split('/')[0]) / float(number.split('/')[1]))
+        else:
+            float(number)'''
         matrix2.set_value(number, i, j)
 
 print("\nMATRIZ 1")
@@ -53,8 +61,7 @@ for i in range(l3):
     for j in range(c3):
         result = 0
         for k in range(c1):
-            result += matrix1.get_value(i,k)* matrix2.get_value(k,j)
+            result += float(matrix1.get_value(i,k) * matrix2.get_value(k,j))
         matrix3.set_value(result, i, j)
 for i in matrix3.get():
    print(i)
-
