@@ -47,10 +47,11 @@ class Matrix():
         determinant = self.get_determinant()
         if  determinant != 0:
             inverted_matrix = Matrix(self.lines, self.colunes)
-            cofactor_matrix = self.get_cofactor_matrix().get_transposed().get()
+            #A matriz adjunta de A é a transposta da matriz de cofactores.
+            adjunt_matrix = self.get_cofactor_matrix().get_transposed().get()
             for i in range(self.lines):
                 for j in range(self.colunes):
-                    number = cofactor_matrix[i][j] / self.get_determinant()
+                    number = adjunt_matrix[i][j] / self.get_determinant()
                     inverted_matrix.set_value(number,i,j)
             return inverted_matrix
         
@@ -83,9 +84,6 @@ class Matrix():
         return cofactor
 
             
-
-
-
     def get_determinant(self):
         if self.lines != self.colunes:
             raise ValueError("Determinante só pode ser calculado para matrizes quadradas.")
@@ -94,43 +92,22 @@ class Matrix():
         elif self.lines == 2:
             return self.matrix[0][0] * self.matrix[1][1] - self.matrix[0][1] * self.matrix[1][0]
         elif self.lines == 3 :
-            return (self.matrix[0][0] * (self.matrix[1][1] * self.matrix[2][2] - self.matrix[1][2] * self.matrix[2][1]) -
-                    self.matrix[0][1] * (self.matrix[1][0] * self.matrix[2][2] - self.matrix[1][2] * self.matrix[2][0]) +
-                    self.matrix[0][2] * (self.matrix[1][0] * self.matrix[2][1] - self.matrix[1][1] * self.matrix[2][0]))
+            dig_sec = (self.matrix[0][2] * self.matrix[1][1] * self.matrix[2][0]) + (self.matrix[0][0] * self.matrix[1][2] * self.matrix[2][1]) + (self.matrix[0][1] * self.matrix[1][0] * self.matrix[2][2])
+            dig_pri = (self.matrix[0][0] * self.matrix[1][1] * self.matrix[2][2]) + (self.matrix[0][1] * self.matrix[1][2] * self.matrix[2][0]) + (self.matrix[0][2] * self.matrix[1][0] * self.matrix[2][1])
+            return dig_pri - dig_sec
         else:
             matrix_line = self.matrix[0]
             cofactors = []
+
             for i in range(self.lines):
                 cofactor = self.get_cofactor(0, i)
                 cofactors.append(cofactor)
-            '''for k in range(self.lines):
-                sub_matrix = Matrix(self.lines - 1, self.colunes - 1)
-                matrix = []
-                for i in range(self.lines):
-                    
-                    lines = []
-                    for j in range(self.colunes):
-                        if i != 0 and j != k:
-                            number = self.matrix[i][j]
-                            lines.append(number)
-                    if lines != []:
-                        matrix.append(lines)
-                if matrix != []:
-                    sub_matrix.set(matrix)
-
-                sub_determinant = sub_matrix.get_determinant()
-                for i in sub_matrix.get():
-                    print(i)
-                print("SubD: ", sub_determinant)
-
-                cofactor = ((-1)**(0 + k)) * sub_determinant
-                cofactors.append(cofactor)'''
-
             result = 0
+
             for i in range(self.lines):
                 result += matrix_line[i] * cofactors[i]
 
-            return result
+            return result 
             
             
 
