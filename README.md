@@ -22,7 +22,7 @@ elif self.lines == 3 :
 ```
 
 ### Matrizes de ordem superior (Teorema de Laplace)
-![Texto alternativo](imgs/determinantsup.png)
+![Texto alternativo](imgs/determinantsup.PNG)
 
 ```python
 else:
