@@ -1,3 +1,7 @@
+# 1. Faça um algoritmo em que o usuário define o tamanho de duas matrizes e as preenche por completo com dados. A partir disso faça a soma entre as matrizes e armazene
+# em uma terceira matriz. Somente é possível somar matrizes de mesmo tamanho.
+# Obrigatório: Utilizar o formato da matriz feita em sala de aula (aula05-exercícios). Não utilizar bibliotecas e funções do python.
+
 # Definir o tamanho da primeira matriz
 n = int(input("Quantidade de Linhas da primeira matriz: "))
 m = int(input("Quantidade de Colunas da primeira matriz: "))
