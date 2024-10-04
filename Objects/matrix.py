@@ -108,6 +108,17 @@ class Matrix():
                 result += matrix_line[i] * cofactors[i]
 
             return result 
+        
+    def get_diagonal_matrix(self):
+        diagonal_matrix = Matrix(self.lines, self.colunes)
+        for i in range(self.lines):
+            for j in range(self.colunes):
+                if i == j:
+                    diagonal_matrix.set_value(self.matrix[i][j],i,j)
+
+        return diagonal_matrix
+            
+
             
             
 

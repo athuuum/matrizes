@@ -1,33 +1,28 @@
-# 4. Faça um algoritmo em que o usuário define o tamanho da matriz e o algoritmo gera uma matriz do “tipo identidade”. É uma matriz quadrada onde todos os elementos da diagonal
+# 4. Faça um algoritmo em que o usuário define o tamanho da matriz e o algoritmo gera uma matriz do “tipo identidade”.
+# É uma matriz quadrada onde todos os elementos da diagonal
 # principal são iguais a 1 e todos os elementos fora dessa diagonal são iguais a 0.
-# Obrigatório: Utilizar o formato da matriz feita em sala de aula (aula05-exercícios). Não utilizar bibliotecas e funções do python.
+
+from Objects.matrix import Matrix
 
 # Definir o tamanho da matriz
-n = int(input("Quantidade de Linhas da primeira matriz: "))
-m = int(input("Quantidade de Colunas da primeira matriz: "))
+n = int(input("Tamanho da matriz quadrada: "))
 
-linha = [0] * m
-matriz = [linha] * n
+# Montar e incluir matriz
+matrix1 = Matrix(n,n)
 
-# Monta a matriz e a preenche com 0
-matriz = []
-for l in range(n):
-    linha = []
-    for c in range(m):
-        linha.append(0)
-    matriz.append(linha)
-
+for i in range(n):
+    line = []
+    for j in range(n):
+        number = int(input(f"Número ({i},{j}): "))
+        matrix1.set_value(number, i, j)
+# Exibir a matriz original
 print("\nMatriz Original: ")
-for linha in matriz:
+for linha in matrix1.get():
     print(linha)
 
-# Buscar diagonal, substitui os valores da diagonal por 1
-for l in range(n):
-   for c in range(m):
-      if l == c:
-          matriz[l][c] = 1
-
+id_matrix = matrix1.get_id()
+          
 # Exibir resultado final com diagonal
-print("\nMatriz Digaonal: ")
-for linha in matriz:
+print("\nMatriz Identidade: ")
+for linha in id_matrix.get():
     print(linha)
