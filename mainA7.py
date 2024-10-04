@@ -28,12 +28,3 @@ transposed_matrix = matrix1.get_transposed()
 for i in transposed_matrix:
    print(i)
 
-"""matrix2 = []
-for i in range(l):
-    line = []
-    for j in range(c):
-        line.append(matrix1[j][i])
-    matrix2.append(line)
-
-for i in range(l):
-   print(matrix2[i])"""

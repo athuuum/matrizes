@@ -53,7 +53,7 @@ for i in range(l3):
     for j in range(c3):
         result = 0
         for k in range(c1):
-            result += matrix1.get_value(i,k)* matrix2.get_value(k,j)
+            result += matrix1.get_value(i,k) * matrix2.get_value(k,j)
         matrix3.set_value(result, i, j)
 for i in matrix3.get():
    print(i)
