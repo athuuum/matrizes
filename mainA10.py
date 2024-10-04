@@ -18,6 +18,8 @@ for i in range(l):
 print("\nMATRIZ")
 for i in range(l):
    print(matrix1.get()[i])
+
+print(matrix1.get_determinant())
    
 print("\nMATRIZ INVERSA")
 inverted = matrix1.get_inverted()
